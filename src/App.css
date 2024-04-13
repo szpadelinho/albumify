@@ -1,0 +1,168 @@
+::-webkit-scrollbar{
+  width: 0px;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html, body, #root{
+  height: 100%;
+  width: 100%;
+}
+
+main{
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #431D30;
+}
+
+.Header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 20px 0px;
+  height: 10%;
+  width: 92%;
+  background: #04151F;
+  border-radius: 20px;
+}
+
+.Body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 20px 0px;
+  flex: 1;
+  width: 92%;
+  background: #121A1E;
+  border-radius: 20px;
+}
+
+.Footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 20px 0px;
+  height: 5%;
+  width: 92%;
+  background: #1F1F1D;
+  border-radius: 20px;
+}
+
+.Header_Content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+}
+
+.Body_Content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 95%;
+}
+
+.Footer_Content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+}
+
+.Logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.Logo h1{
+  color: #F84AA7;
+  font-size: 50px;
+}
+
+.Searchbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Cover{
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 40%;
+}
+
+.Cover h1, .Cover h2, .Cover h3, .Cover h4{
+  margin: 2px;
+}
+
+.Cover img{
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.Info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 50%;
+}
+
+.Info h2{
+  margin: 0
+}
+
+.Info ul{
+  max-height: 400px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.Info li{
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+  background: #04151F;
+  border-radius: 15px;
+}
+
+.Info li p{
+  margin: 10px;
+}
+
+#track_id{
+  font-weight: 900;
+}
+
+#track_artists{
+  color: rgba(255, 255, 255, .3);
+}
+
+#searchbar{
+  height: 50px;
+  width: 600px;
+  display: flex;
+  border-radius: 10px;
+  border: 10px #FF3562;
+  background: #1F1F1D;
+  font-size: 20px;
+  padding: 5px 15px 5px 15px;
+}
