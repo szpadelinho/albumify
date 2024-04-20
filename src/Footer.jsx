@@ -1,9 +1,9 @@
 import './App.css'
-const Footer = () => {
+const Footer = ({textColor}) => {
     return(
         <div className="Footer">
             <div className="Footer_Content">
-                <h4>Albumify © 2024</h4>
+                <h4 style={{color: textColor}}>Albumify © 2024</h4>
             </div>
         </div>
     )

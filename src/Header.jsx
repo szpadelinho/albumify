@@ -1,7 +1,7 @@
 import './App.css'
 import React from 'react'
 
-const Header = ({handleSearch}) => {
+const Header = ({handleSearch, textColor}) => {
     const handleChange = (event) => {
         handleSearch(event.target.value);
     };
@@ -10,7 +10,7 @@ const Header = ({handleSearch}) => {
         <div className="Header">
             <div className="Header_Content">
                 <div className="Logo">
-                    <h1>Albumify</h1>
+                    <h1 style={{color: textColor}}>Albumify</h1>
                 </div>
                 <div className="Searchbar">
                     <input id="searchbar" type="text" placeholder="Wyszukaj tutaj albumu, singla, kompilacji lub EP'ki" onChange={handleChange}/>

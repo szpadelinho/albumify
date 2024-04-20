@@ -21,6 +21,7 @@ main{
   justify-content: space-between;
   align-items: center;
   background: #431D30;
+  transition-duration: .5s;
 }
 
 .Header{
@@ -32,6 +33,7 @@ main{
   width: 92%;
   background: #04151F;
   border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3)
 }
 
 .Body{
@@ -43,6 +45,7 @@ main{
   width: 92%;
   background: #121A1E;
   border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3)
 }
 
 .Search{
@@ -54,6 +57,7 @@ main{
   width: 92%;
   background: #121A1E;
   border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3)
 }
 
 .Footer{
@@ -65,6 +69,7 @@ main{
   width: 92%;
   background: #1F1F1D;
   border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3)
 }
 
 .Header_Content{
@@ -87,6 +92,7 @@ main{
   align-items: center;
   justify-content: center;
   width: 95%;
+  user-select: none;
 }
 
 .Logo{
@@ -97,6 +103,7 @@ main{
 }
 
 .Logo h1{
+  user-select: none;
   color: #F84AA7;
   font-size: 50px;
 }
@@ -117,12 +124,14 @@ main{
 
 .Cover h1, .Cover h2, .Cover h3, .Cover h4{
   margin: 2px;
+  user-select: none;
 }
 
 .Cover img{
   height: 400px;
   width: 400px;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3)
 }
 
 .Info{
@@ -135,11 +144,12 @@ main{
 }
 
 .Info h2{
-  margin: 0
+  margin: 0;
+  user-select: none;
 }
 
 .Info ul{
-  max-height: 400px;
+  max-height: 425px;
   width: 100%;
   overflow-y: auto;
 }
@@ -148,7 +158,7 @@ main{
   display: flex;
   align-items: center;
   list-style-type: none;
-  height: 50px;
+  min-height: 50px;
   width: 100%;
   margin: 10px 0px 10px 0px;
   background: #04151F;
@@ -163,7 +173,18 @@ main{
   font-weight: 900;
 }
 
+#track_name{
+  font-weight: 500;
+}
+
 #track_artists{
+  color: rgba(255, 255, 255, .3);
+  font-weight: 500;
+  margin: 0px 0px 0px 5px
+}
+
+span{
+  font-weight: 500;
   color: rgba(255, 255, 255, .3);
 }
 
@@ -228,3 +249,40 @@ main{
   align-items: center;
 }
 
+.artists{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.artists h2, .artists span, .artists p{
+  display: inline;
+  justify-content: end;
+}
+
+.artists span{
+  margin-top: 12px;
+  margin-right: 5px;
+}
+
+.artists #span2{
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
+#artist_name{
+  font-weight: 500;
+}
+
+#album_name{
+  font-weight: 700;
+}
+
+#album_year{
+  font-weight: 100;
+}
+
+.Search_Content li{
+  background: #04151F;
+  border-radius: 10px;
+  margin: 20px 0px 20px 0px;
+}
