@@ -69,7 +69,8 @@ main{
   width: 92%;
   background: #1F1F1D;
   border-radius: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3)
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, .7)
 }
 
 .Header_Content{
@@ -82,7 +83,7 @@ main{
 .Body_Content{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 500px;
   width: 95%;
 }
@@ -117,14 +118,22 @@ main{
 
 .Cover{
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  height: 500px;
-  width: 40%;
+  height: 550px;
+  width: 27%;
+  border: 7px solid #04151F;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
 }
 
 .Cover h1, .Cover h2, .Cover h3, .Cover h4{
   margin: 2px;
   user-select: none;
+  display: flex;
+  justify-content: flex-start;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
 
 .Cover img{
@@ -139,8 +148,10 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 550px;
   width: 50%;
+  user-select: none;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
 
 .Info h2{
@@ -163,6 +174,7 @@ main{
   margin: 10px 0px 10px 0px;
   background: #04151F;
   border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
 }
 
 .Info li p{
@@ -178,9 +190,14 @@ main{
 }
 
 #track_artists{
+  display: flex;
   color: rgba(255, 255, 255, .3);
   font-weight: 500;
-  margin: 0px 0px 0px 5px
+  margin: 0px 0px 0px 5px;
+}
+
+#track_artists p{
+  margin-right: 5px;
 }
 
 span{
@@ -192,11 +209,13 @@ span{
   height: 50px;
   width: 600px;
   display: flex;
-  border-radius: 10px;
-  border: 10px #FF3562;
-  background: #1F1F1D;
+  border-radius: 20px;
+  border: 1px solid #1F1F1D;
   font-size: 20px;
   padding: 5px 15px 5px 15px;
+  font-weight: 900;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, .7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
 }
 
 .Search ul{
@@ -206,8 +225,8 @@ span{
 }
 
 #list_cover img{
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   border-radius: 10px;
 }
 
@@ -234,13 +253,14 @@ span{
 
 .Search li{
   height: 150px;
-  width: 600px;
+  width: 1000px;
   list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
 }
 
 .Search_Content{
@@ -251,7 +271,11 @@ span{
 
 .artists{
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .artists h2, .artists span, .artists p{
@@ -285,4 +309,20 @@ span{
   background: #04151F;
   border-radius: 10px;
   margin: 20px 0px 20px 0px;
+}
+
+#album_disc{
+  display: inline;
+  font-weight: 500;
+}
+
+#album_disc_number{
+  display: inline;
+  font-weight: 900;
+}
+
+#album_disc_list{
+  background: #030e14;
+  height: auto;
+  width: 100px;
 }

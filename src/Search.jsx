@@ -18,7 +18,7 @@ const Search = ({searchResult, onAlbumClick, getImage}) => {
                     {searchResult && searchResult.map((item, index) => (
                         <li key={index} onClick={() => handleAlbumClick(item)}>
                             <div id="list_cover">
-                                <img src={item.data.coverArt.sources[0].url} />
+                                <img src={item.data.coverArt.sources.sort((a, b) => b.height - a.height)[0].url} />
                             </div>
                             <div id="list_info">
                                 <div className="artists">

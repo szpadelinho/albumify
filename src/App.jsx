@@ -35,11 +35,14 @@ function App() {
   const [albumTracks, setAlbumTracks] = useState(null);
   const [bgColor, setBgColor] = useState("#431D30")
   const [textColor, setTextColor] = useState("#F84AA7")
+  const [inputColor, setInputColor] = useState("#1F1F1D")
+  const [borderColor, setBorderColor] = useState("#1F1F1D")
 
   const requestApi = (query) => {
     fetch(`https://spotify23.p.rapidapi.com/search/?q=${query}&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
       .then(res => res.json())
       .then(res => {
+        console.log(res.albums.items)
         setSearchResult(res.albums.items)
         setVisibleSearch(true)
         setVisibleBody(false)
@@ -51,8 +54,8 @@ function App() {
     fetch(`https://spotify81.p.rapidapi.com/album_tracks?id=${uri}&offset=0&limit=300`, options2)
       .then(response => response.json())
       .then(response => {
-        console.log(response)
         setAlbumTracks(response.data.album.tracks.items)
+        console.log(response.data.album.tracks.items)
         setVisibleBody(true)
       })
       .catch(err => console.error(err))
@@ -84,6 +87,8 @@ function App() {
     const hexColor = rgbToHex(color)
     setBgColor(hexColor)
     setTextColor(hexColor)
+    setInputColor(hexColor)
+    setBorderColor(hexColor)
   }
 
   useEffect(() => {
@@ -91,19 +96,23 @@ function App() {
       requestApi(searchQuery)
       setBgColor("#431D30")
       setTextColor("#F84AA7")
+      setInputColor("#1F1F1D")
+      setBorderColor("#1F1F1D")
     }
     else{
       setVisibleSearch(false)
       setVisibleBody(false)
       setBgColor("#431D30")
       setTextColor("#F84AA7")
+      setInputColor("#1F1F1D")
+      setBorderColor("#1F1F1D")
     }
   }, [searchQuery]);
 
   return (
     <View bgColor={bgColor}>
-      <Header handleSearch={handleSearch} textColor={textColor}/>
-      {isVisibleBody && <Body album={selectedAlbum} tracks={albumTracks}/>}
+      <Header handleSearch={handleSearch} textColor={textColor} inputColor={inputColor}/>
+      {isVisibleBody && <Body album={selectedAlbum} tracks={albumTracks} borderColor={borderColor}/>}
       {isVisibleSearch && <Search searchResult={searchResult} onAlbumClick={handleAlbumClick} getImage={getImage} />}
       <Footer textColor={textColor}/>
     </View>

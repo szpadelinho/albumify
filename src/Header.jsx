@@ -1,7 +1,7 @@
 import './App.css'
 import React from 'react'
 
-const Header = ({handleSearch, textColor}) => {
+const Header = ({handleSearch, textColor, inputColor}) => {
     const handleChange = (event) => {
         handleSearch(event.target.value);
     };
@@ -13,7 +13,7 @@ const Header = ({handleSearch, textColor}) => {
                     <h1 style={{color: textColor}}>Albumify</h1>
                 </div>
                 <div className="Searchbar">
-                    <input id="searchbar" type="text" placeholder="Wyszukaj tutaj albumu, singla, kompilacji lub EP'ki" onChange={handleChange}/>
+                    <input id="searchbar" type="text" style={{background: inputColor, transitionDuration: .5}} placeholder="Wyszukaj tutaj albumu, singla, kompilacji lub EP'ki" onChange={handleChange}/>
                 </div>
             </div>
         </div>
