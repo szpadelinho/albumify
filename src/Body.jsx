@@ -6,7 +6,7 @@ const Body = ({ album, tracks, borderColor }) => {
     return (
         <div className="Body">
             <div className="Body_Content">
-                <div className="Cover" style={{ borderColor: borderColor, transitionDuration: .5 }}>
+                <div className="Cover" style={{ borderColor: borderColor, transitionDuration: '.5s' }}>
                     <img src={cover} alt="Album Cover" />
                     <div className="artists">
                         {album.data.artists.items.map((artist, index) => (

@@ -38,17 +38,38 @@ function App() {
   const [inputColor, setInputColor] = useState("#1F1F1D")
   const [borderColor, setBorderColor] = useState("#1F1F1D")
 
-  const requestApi = (query) => {
-    fetch(`https://spotify23.p.rapidapi.com/search/?q=${query}&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res.albums.items)
-        setSearchResult(res.albums.items)
-        setVisibleSearch(true)
-        setVisibleBody(false)
-      })
-      .catch(err => console.error(err))
-  }
+  useEffect(() => {
+    if (searchQuery.trim().length !== 0) {
+      const timer = setTimeout(() => {
+        const requestApi = (query) => {
+          fetch(`https://spotify23.p.rapidapi.com/search/?q=${query}&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
+            .then(res => res.json())
+            .then(res => {
+              console.log(res.albums.items)
+              setSearchResult(res.albums.items)
+              setVisibleSearch(true)
+              setVisibleBody(false)
+            })
+            .catch(err => console.error(err))
+        }
+        requestApi(searchQuery)
+      }, 500)
+
+      setBgColor("#431D30")
+      setTextColor("#F84AA7")
+      setInputColor("#1F1F1D")
+      setBorderColor("#1F1F1D")
+
+      return () => clearTimeout(timer)
+    } else {
+      setVisibleSearch(false)
+      setVisibleBody(false)
+      setBgColor("#431D30")
+      setTextColor("#F84AA7")
+      setInputColor("#1F1F1D")
+      setBorderColor("#1F1F1D")
+    }
+  }, [searchQuery])
 
   const requestApi2 = (uri) => {
     fetch(`https://spotify81.p.rapidapi.com/album_tracks?id=${uri}&offset=0&limit=300`, options2)
@@ -59,7 +80,7 @@ function App() {
         setVisibleBody(true)
       })
       .catch(err => console.error(err))
-    }
+  }
 
   const handleSearch = (query) => {
     setSearchQuery(query)
@@ -80,7 +101,6 @@ function App() {
       return hex.length === 1 ? '0' + hex : hex
     }).join('')
   }
-  
 
   const getImage = (img) => {
     const color = colorThief.getColor(img)
@@ -90,24 +110,6 @@ function App() {
     setInputColor(hexColor)
     setBorderColor(hexColor)
   }
-
-  useEffect(() => {
-    if (searchQuery.trim().length !== 0) {
-      requestApi(searchQuery)
-      setBgColor("#431D30")
-      setTextColor("#F84AA7")
-      setInputColor("#1F1F1D")
-      setBorderColor("#1F1F1D")
-    }
-    else{
-      setVisibleSearch(false)
-      setVisibleBody(false)
-      setBgColor("#431D30")
-      setTextColor("#F84AA7")
-      setInputColor("#1F1F1D")
-      setBorderColor("#1F1F1D")
-    }
-  }, [searchQuery]);
 
   return (
     <View bgColor={bgColor}>
