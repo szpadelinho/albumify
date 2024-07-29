@@ -35,7 +35,7 @@ function App() {
   const [albumTracks, setAlbumTracks] = useState(null);
   const [bgColor, setBgColor] = useState("#431D30")
   const [textColor, setTextColor] = useState("#F84AA7")
-  const [inputColor, setInputColor] = useState("#1F1F1D")
+  const [inputColor, setInputColor] = useState("#431D30")
   const [borderColor, setBorderColor] = useState("#1F1F1D")
 
   useEffect(() => {
@@ -57,7 +57,7 @@ function App() {
 
       setBgColor("#431D30")
       setTextColor("#F84AA7")
-      setInputColor("#1F1F1D")
+      setInputColor("#431D30")
       setBorderColor("#1F1F1D")
 
       return () => clearTimeout(timer)
@@ -66,7 +66,7 @@ function App() {
       setVisibleBody(false)
       setBgColor("#431D30")
       setTextColor("#F84AA7")
-      setInputColor("#1F1F1D")
+      setInputColor("#431D30")
       setBorderColor("#1F1F1D")
     }
   }, [searchQuery])
@@ -116,7 +116,7 @@ function App() {
       <Header handleSearch={handleSearch} textColor={textColor} inputColor={inputColor}/>
       {isVisibleBody && <Body album={selectedAlbum} tracks={albumTracks} borderColor={borderColor}/>}
       {isVisibleSearch && <Search searchResult={searchResult} onAlbumClick={handleAlbumClick} getImage={getImage} />}
-      <Footer textColor={textColor}/>
+      {/* <Footer textColor={textColor}/> */}
     </View>
   )
 }

@@ -2,6 +2,10 @@
   width: 0px;
 }
 
+html{
+  cursor: help;
+}
+
 body{
   display: flex;
   justify-content: center;
@@ -67,7 +71,7 @@ main{
   margin: 20px 0px 20px 0px;
   height: 5%;
   width: 92%;
-  background: #1F1F1D;
+  background: #04151F;
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
   text-shadow: 0px 0px 5px rgba(0, 0, 0, .7)
@@ -101,6 +105,7 @@ main{
   align-items: center;
   justify-content: center;
   width: 25%;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, .7);
 }
 
 .Logo h1{
@@ -131,6 +136,7 @@ main{
   font-size: 30px;
   outline: none !important;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, .7);
+  cursor: default;
 }
 
 .Searchbar input{
@@ -209,7 +215,8 @@ main{
 }
 
 #track_name{
-  font-weight: 500;
+  font-weight: 700;
+  text-wrap: nowrap;
 }
 
 #track_artists{
@@ -217,6 +224,7 @@ main{
   color: rgba(255, 255, 255, .3);
   font-weight: 500;
   margin: 0px 0px 0px 5px;
+  text-wrap: nowrap;
 }
 
 #track_artists p{
@@ -346,7 +354,59 @@ span{
 }
 
 #album_disc_list{
+  background: #121A1E;
+  border-radius: 0;
+  height: 60px;
+  width: 100%;
+  margin: 0;
+}
+
+.sticky_disc_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #030e14;
-  height: auto;
+  height: 50px;
   width: 100px;
+  border-radius: 15px;
+}
+
+.sticky_disc_number {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: none !important;
+  padding: 0px !important;
+}
+
+.name_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
